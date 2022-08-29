@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Crear materia{% endblock %}
+
+{% block content %}
+  <form class="form-horizontal" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a href="{% url 'subjects:list' %}" class="btn btn-default">Regresar</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}

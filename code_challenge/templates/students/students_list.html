@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Lista de Estudiantes</h2>
+  <a href="{% url 'students:create' %}" class="btn btn-success">Agregar estudiante</a>
+  <hr>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Tipo de identificación</th>
+      <th scope="col">Número de identificación</th>
+      <th scope="col">Celular</th>
+      <th scope="col">Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in object_list %}
+      <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.get_identification_type_display}}</td>
+        <td>{{ student.identification }}</td>
+        <td>{{ student.phone_number }}</td>
+        <td>
+          <a href="{% url 'students:update' student.id %}" class="btn btn-sm btn-primary">
+            Editar
+          </a>
+          <a href="{% url 'grades:list' student.id %}" class="btn btn-sm btn-warning">
+            Ver notas
+          </a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>No students yet.</tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Agregar Estudiante{% endblock %}
+
+{% block content %}
+  <form class="form-horizontal" method="post" action="{% url 'students:create' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a href="{% url 'students:list' %}" class="btn btn-default">Regresar</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}
+

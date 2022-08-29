@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Lista de Materias</h2>
+  <a href="{% url 'subjects:create' %}" class="btn btn-success">Crear Materia</a>
+  <hr>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Opción</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for subject in object_list %}
+      <tr>
+        <th scope="row">{{ subject.id }}</th>
+        <td>{{ subject.name }}</td>
+        <td>
+          <a href="{% url 'subjects:update' subject.id %}" class="btn btn-sm btn-primary">
+            Editar
+          </a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>No subjects yet.</tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
