@@ -19,22 +19,29 @@ Programa para subir notas de los estudiantes.
 
 ### User
 `http://localhost:8000/users/<email>/` Muestra el perfil del admin logueado
+
 `http://localhost:8000/accounts/logout/` Interfaz para cerrar sesión
 
 
 ### Students
 `http://localhost:8000/students/` Muestra la lista de estudiantes
+
 `http://localhost:8000/students/<pk>/update` Edita un estudiante
+
 `http://localhost:8000/students/create` Agrega un estudiante
 
 ### Subjects (Materias)
 `http://localhost:8000/subjects/` Muestra la lista de materias
+
 `http://localhost:8000/subjects/<pk>/update` Edita una materia
+
 `http://localhost:8000/subjects/create` Crea una materia
 
 ### Grades (Notas)
 `http://localhost:8000/grades/students/<pk>/` Muestra la lista de notas de un estudiante
+
 `http://localhost:8000/grades/<pk>/update/` Edita la nota de un estudiante
+
 `http://localhost:8000/grades/students/<pk>/create/` Agrega una nota a un estudiante
 
 ## Comandos
