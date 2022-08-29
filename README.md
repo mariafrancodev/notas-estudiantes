@@ -2,7 +2,7 @@
 
 Programa para subir notas de los estudiantes.
 
-**Nota:** Luego de registrar un usuario debe dirigirse al `localhost:8085` para confirmar el email del usuario registrado.
+**Nota:** Luego de registrar un usuario debe dirigirse al `localhost:8025` para confirmar el email del usuario registrado.
 
 #### Plantilla:
 
@@ -13,7 +13,9 @@ Programa para subir notas de los estudiantes.
 * Django
 * PostgresSQL
 * Docker
-* Email Server
+* Docker-compose
+* Bootstrap
+* MailHog
 
 ## Módulos
 
